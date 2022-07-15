@@ -1,0 +1,24 @@
+During Autowiring, if there are multiple beans that are matching
+then the order of bean resolution for dependency injection is 
+1. byType
+2. byName
+
+If @Autowired annotation is on the class field (data member / property)
+	then Setter Injection is used. (So a default constructor must be available
+	in the class).
+	
+If @Autowired annotation is on a setter method then setter injection will be carried out.
+
+If @Autowired annotation is added to a constructor then
+	Constructor Injection will be carried out.
+	
+	
+JSR 250 Annotations
+@PostConstruct
+	Run code after the bean dependencies have been injected
+	
+@PreDestroy
+	Run code before the bean is destroyed (used for any last-minute cleanup)
+	
+@Resource
+	Combination of @Autowired and @Qualifier annotations
